@@ -247,13 +247,16 @@ function getMovieTitles() {
   return movies.map((film) => film.Title);
 }
 
+console.log(getMovieTitles());
+
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 function getMoviesInCurrentMillennium() {
-  const currentYear = new Date().getFullYear();
-  return movies.filter((film) => film.Year >= currentYear - 1000);
+  return movies.filter((film) => film.Year >= 2000);
 }
+
+console.log(getMoviesInCurrentMillennium())
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
@@ -262,6 +265,8 @@ function sumMovieYears() {
   return movies.reduce((total, film) => total + parseInt(film.Year), 0);
 }
 
+console.log(sumMovieYears());
+
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
@@ -269,9 +274,13 @@ function findFilmById(imdbID) {
   return movies.find((film) => film.imdbID === imdbID);
 }
 
+console.log(findFilmById("tt2395427"));
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+
 function findIndexOfFilmByYear(year) {
   return movies.findIndex((film) => film.Year === year);
 }
+
+console.log(findIndexOfFilmByYear("2005"));
